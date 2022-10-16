@@ -1,0 +1,9 @@
+# Build settings
+remote_theme: pages-themes/cayman@v0.2.0
+plugins:
+  - jekyll-remote-theme
+
+# Site settings
+title: '計算ドリル'
+description: '四則演算の計算ドリル問題をランダムで生成する'
+lang: 'ja'

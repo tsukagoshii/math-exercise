@@ -1,0 +1,4 @@
+# Bundle/Jekyll
+docs/vendor/
+docs/.bundle/
+docs/_site/
