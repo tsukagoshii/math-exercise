@@ -7,3 +7,4 @@ plugins:
 title: '計算ドリル'
 description: '四則演算の計算ドリル問題をランダムで生成する'
 lang: 'ja'
+google_analytics: 'G-N913XPW10E'
