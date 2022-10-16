@@ -1,0 +1,46 @@
+---
+#############################
+#############################
+## JavaScript Linter rules ##
+#############################
+#############################
+
+############
+# Env Vars #
+############
+env:
+  browser: true
+  es6: true
+  # jest: true
+  # node: true
+
+###############
+# Global Vars #
+###############
+globals:
+  Atomics: readonly
+  SharedArrayBuffer: readonly
+
+###############
+# Parser vars #
+###############
+parser: '@typescript-eslint/parser'
+parserOptions:
+  ecmaVersion: 2018
+  sourceType: script
+
+###########
+# Plugins #
+###########
+extends:
+  - 'eslint:recommended'
+  - 'plugin:prettier/recommended'
+plugins:
+  - '@typescript-eslint'
+
+#########
+# Rules #
+#########
+rules:
+  no-useless-escape: warn
+  semi: error
