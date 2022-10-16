@@ -1,0 +1,30 @@
+{
+  "name": "math-exercise",
+  "version": "1.0.0",
+  "description": "四則演算の計算ドリル問題をランダムで生成するウェブツール",
+  "main": "exercise.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tsukagoshii/math-exercise.git"
+  },
+  "author": "ttsukagoshi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tsukagoshii/math-exercise/issues"
+  },
+  "homepage": "https://github.com/tsukagoshii/math-exercise#readme",
+  "devDependencies": {
+    "eslint": "^8.25.0",
+    "prettier": "^2.7.1",
+    "eslint-config-prettier": "^8.4.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "@typescript-eslint/eslint-plugin": "^5.39.0",
+    "@typescript-eslint/parser": "^5.39.0"
+  }
+}
