@@ -18,8 +18,8 @@ function createExercise() {
   try {
     // 設定値を取得して検証する。
     const config = validateConfig({
-      min: document.getElementById('min').value,
-      max: parseInt(document.getElementById('max').value),
+      min: parseFloat(document.getElementById('min').value),
+      max: parseFloat(document.getElementById('max').value),
       typePlus: document.getElementById('typePlus').checked ? true : false,
       typeMinus: document.getElementById('typeMinus').checked ? true : false,
       typeMultiply: document.getElementById('typeMultiply').checked
@@ -132,14 +132,15 @@ function validateConfig(config) {
     config.max != parseInt(config.max)
   ) {
     throw new TypeError('「数字の範囲」は半角数字で整数を指定してください。');
+  } else {
+    config.min = parseInt(config.min);
+    config.max = parseInt(config.max);
   }
   if (config.min > config.max) {
     throw new RangeError(
       '「数字の範囲」指定で、最小値は最大値以下の値に設定してください。'
     );
   }
-  config.min = parseInt(config.min);
-  config.max = parseInt(config.max);
   // 0以下の数字が「数字の範囲」に含まれるのであれば、allowMinusの入力値に関わらずtrueにする
   config.allowMinus = config.min < 0 ? true : config.allowMinus;
   // 計算の種類
