@@ -84,6 +84,7 @@ function createExercise() {
           Math.floor(Math.random() * (config.max - config.min + 1)) +
           config.min;
       }
+      secondNum = secondNum < 0 ? `( ${secondNum} )` : secondNum;
       return `<li>${firstNum} ${math} ${secondNum} = </li>`;
     });
     document.getElementById('exercise').innerHTML = maths.join('');
