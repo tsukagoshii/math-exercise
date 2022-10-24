@@ -1,7 +1,8 @@
-# Bundle/Jekyll
+# Ruby/Bundle/Jekyll
 docs/vendor/
 docs/.bundle/
 docs/_site/
+Gemfile.lock
 
 # Node.js
 node_modules/
