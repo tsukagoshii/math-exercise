@@ -6,3 +6,6 @@ docs/Gemfile.lock
 
 # Node.js
 node_modules/
+
+# system
+.DS_Store
