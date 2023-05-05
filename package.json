@@ -1,6 +1,6 @@
 {
   "name": "math-exercise",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "四則演算の計算ドリル問題をランダムで生成するウェブツール",
   "main": "exercise.js",
   "directories": {
