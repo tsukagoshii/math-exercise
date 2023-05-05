@@ -1,6 +1,6 @@
 {
   "name": "math-exercise",
-  "version": "1.0.0",
+  "version": "1.0.6",
   "description": "四則演算の計算ドリル問題をランダムで生成するウェブツール",
   "main": "exercise.js",
   "directories": {
@@ -20,11 +20,11 @@
   },
   "homepage": "https://github.com/tsukagoshii/math-exercise#readme",
   "devDependencies": {
-    "eslint": "^8.35.0",
-    "prettier": "^2.8.4",
-    "eslint-config-prettier": "^8.6.0",
+    "eslint": "^8.39.0",
+    "prettier": "^2.8.8",
+    "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "@typescript-eslint/eslint-plugin": "^5.54.0",
-    "@typescript-eslint/parser": "^5.54.0"
+    "@typescript-eslint/eslint-plugin": "^5.59.2",
+    "@typescript-eslint/parser": "^5.59.2"
   }
 }
