@@ -12,3 +12,7 @@ updates:
     assignees:
       - 'ttsukagoshi'
     target-branch: 'main'
+    groups:
+      typescript-eslint:
+        patterns:
+          - '@typescript-eslint/*'
