@@ -139,7 +139,7 @@ function validateConfig(config) {
   }
   if (config.min > config.max) {
     throw new RangeError(
-      '「数字の範囲」指定で、最小値は最大値以下の値に設定してください。'
+      '「数字の範囲」指定で、最小値は最大値以下の値に設定してください。',
     );
   }
   // 0以下の数字が「数字の範囲」に含まれるのであれば、allowMinusの入力値に関わらずtrueにする
@@ -153,7 +153,7 @@ function validateConfig(config) {
     0
   ) {
     throw new Error(
-      '「計算の種類」では、1つ以上の計算を選んでチェックを入れてください。'
+      '「計算の種類」では、1つ以上の計算を選んでチェックを入れてください。',
     );
   }
   // 設問数
