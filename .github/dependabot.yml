@@ -16,3 +16,17 @@ updates:
       typescript-eslint:
         patterns:
           - '@typescript-eslint/*'
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    assignees:
+      - 'ttsukagoshi'
+    target-branch: 'main'
+  - package-ecosystem: "bundler"
+    directory: "/docs"
+    schedule:
+      interval: "monthly"
+    assignees:
+      - 'ttsukagoshi'
+    target-branch: 'main'
