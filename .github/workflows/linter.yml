@@ -11,7 +11,7 @@ name: Lint Code Base
 #############################
 on:
   push:
-    branches-ignore: [main]
+    # branches-ignore: [main]
     # Remove the line above to run when pushing to master or main
   pull_request:
     branches: [main, gh-pages]
@@ -55,7 +55,6 @@ jobs:
         uses: super-linter/super-linter/slim@v6
         env:
           VALIDATE_ALL_CODEBASE: true
-          VALIDATE_JAVASCRIPT_ES: true
           LINTER_RULES_PATH: /
           JAVASCRIPT_ES_CONFIG_FILE: .eslintrc.yml
           DEFAULT_BRANCH: main
