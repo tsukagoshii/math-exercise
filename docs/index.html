@@ -12,25 +12,25 @@ layout: default
     <input type="number" id="max" value="100" required />
     <h3>計算の種類</h3>
     <div id="error-type" class="message"></div>
-    <input type="checkbox" id="typePlus" checked />
-    <label for="typePlus">足し算</label>
-    <input type="checkbox" id="typeMinus" checked />
-    <label for="typeMinus">引き算</label>
-    <input type="checkbox" id="typeMultiply" checked />
-    <label for="typeMultiply">掛け算</label>
-    <input type="checkbox" id="typeDivide" checked />
-    <label for="typeDivide">割り算</label>
+    <input type="checkbox" id="type-plus" checked />
+    <label for="type-plus">足し算</label>
+    <input type="checkbox" id="type-minus" checked />
+    <label for="type-minus">引き算</label>
+    <input type="checkbox" id="type-multiply" checked />
+    <label for="type-multiply">掛け算</label>
+    <input type="checkbox" id="type-divide" checked />
+    <label for="type-divide">割り算</label>
     <h3>引き算でのマイナス値</h3>
     <p>
       「数字の範囲」で0以下の数字を設定するか、以下にチェックを入れると、引き算の結果がマイナスとなる計算も生成されます。
     </p>
-    <input type="checkbox" id="allowMinus" />
-    <label for="allowMinus">結果がマイナスとなる引き算も生成する</label>
+    <input type="checkbox" id="allow-minus" />
+    <label for="allow-minus">結果がマイナスとなる引き算も生成する</label>
     <h3>設問数</h3>
     <div id="error-count" class="message"></div>
     <input
       type="number"
-      id="exerciseCount"
+      id="exercise-count"
       value="20"
       min="1"
       max="1000"

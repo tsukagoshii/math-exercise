@@ -20,14 +20,14 @@ function createExercise() {
     const config = validateConfig({
       min: parseFloat(document.getElementById('min').value),
       max: parseFloat(document.getElementById('max').value),
-      typePlus: document.getElementById('typePlus').checked ? true : false,
-      typeMinus: document.getElementById('typeMinus').checked ? true : false,
-      typeMultiply: document.getElementById('typeMultiply').checked
+      typePlus: document.getElementById('type-plus').checked ? true : false,
+      typeMinus: document.getElementById('type-minus').checked ? true : false,
+      typeMultiply: document.getElementById('type-multiply').checked
         ? true
         : false,
-      typeDivide: document.getElementById('typeDivide').checked ? true : false,
-      allowMinus: document.getElementById('allowMinus').checked ? true : false,
-      exerciseCount: document.getElementById('exerciseCount').value,
+      typeDivide: document.getElementById('type-divide').checked ? true : false,
+      allowMinus: document.getElementById('allow-minus').checked ? true : false,
+      exerciseCount: document.getElementById('exercise-count').value,
     });
     // 設問の数だけ、最初の数字をランダムに生成して配列に格納する
     const firstNums = [...Array(config.exerciseCount)].map(() => {
