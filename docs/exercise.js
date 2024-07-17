@@ -1,5 +1,3 @@
-/* exported createExercise */
-
 // 全角半角の混乱を避けるために、事前に計算の記号を定義しておく
 const GLYPHS_MATH = {
   plus: '＋',
@@ -26,13 +24,16 @@ function createExercise() {
         ? true
         : false,
       typeDivide: document.getElementById('type-divide').checked ? true : false,
+      allowRemainder: document.getElementById('allow-remainder').checked
+        ? true
+        : false,
       allowMinus: document.getElementById('allow-minus').checked ? true : false,
       exerciseCount: document.getElementById('exercise-count').value,
     });
     // 設問の数だけ、最初の数字をランダムに生成して配列に格納する
     const firstNums = [...Array(config.exerciseCount)].map(() => {
       return (
-        Math.floor(Math.random() * (config.max - config.min + 1)) + config.min
+        Math.ceil(Math.random() * (config.max - config.min + 1)) + config.min
       );
     });
     // 使用する計算を配列useMathsに格納
@@ -61,13 +62,15 @@ function createExercise() {
         secondNum =
           Math.floor(Math.random() * (firstNum - config.min + 1)) + config.min;
       } else if (math === GLYPHS_MATH.divide) {
-        const factors = getFactors(firstNum);
+        const factors = getFactors(firstNum, config.allowRemainder);
+        console.log(factors); // debug
         if (factors.length === 1 && factors[0] === 0) {
           secondNum =
             Math.floor(Math.random() * (config.max - config.min + 1)) +
             config.min;
         } else {
           secondNum = factors[Math.floor(Math.random() * factors.length)];
+          console.log(secondNum); // debug
         }
         if (secondNum === 0) {
           // 分母が0とならないようにする。
@@ -146,10 +149,10 @@ function validateConfig(config) {
   config.allowMinus = config.min < 0 ? true : config.allowMinus;
   // 計算の種類
   if (
-    config.typePlus +
-      config.typeMinus +
-      config.typeMultiply +
-      config.typeDivide ==
+    (config.typePlus ? 1 : 0) +
+      (config.typeMinus ? 1 : 0) +
+      (config.typeMultiply ? 1 : 0) +
+      (config.typeDivide ? 1 : 0) ==
     0
   ) {
     throw new Error(
@@ -170,16 +173,28 @@ function validateConfig(config) {
 }
 
 /**
- * 入力した整数の素因数を配列として返す
- * @param {Number} 素因数分解する整数
- * @return {Array} 入力した整数の素因数を昇順で格納した配列
+ * 入力した整数の因数を配列として返す。
+ * allowRemainderがtrueの場合、因数に限らず、入力した整数の絶対値以下、1以上の整数を全て返す。
+ * @param {number} number 因数分解する整数
+ * @param {boolean} allowRemainder あまりを許容するかどうか。これがtrueの場合、入力した整数の絶対値以下、1以上の整数を全て返す。
+ * デフォルトはfalse。
+ * @return {number[]} 入力した整数の因数を昇順で格納した配列
  */
-function getFactors(number) {
-  const absNumber = number < 0 ? -number : number;
+function getFactors(number, allowRemainder = false) {
+  const absNumber = number < 0 ? -1 * number : number;
   if (absNumber !== Math.floor(absNumber)) {
-    throw new Error(`${number} は整数ではありません。`);
+    throw new TypeError(`${number} は整数ではありません。`);
   }
-  return absNumber === 0
-    ? [0]
-    : [...Array(absNumber + 1).keys()].filter((i) => absNumber % i === 0);
+  if (absNumber === 0) {
+    return [0];
+  }
+  const factors = [...Array(absNumber).keys()].map((x) => x + 1);
+  return allowRemainder ? factors : factors.filter((i) => absNumber % i === 0);
 }
+
+module.exports = {
+  createExercise,
+  reset,
+  validateConfig,
+  getFactors,
+};
