@@ -11,15 +11,8 @@
 env:
   browser: true
   es6: true
-  # jest: true
-  # node: true
-
-###############
-# Global Vars #
-###############
-globals:
-  Atomics: readonly
-  SharedArrayBuffer: readonly
+  jest: true
+  node: true
 
 ###############
 # Parser vars #
@@ -36,11 +29,4 @@ extends:
   - 'eslint:recommended'
   - 'plugin:prettier/recommended'
 plugins:
-  - '@typescript-eslint'
-
-#########
-# Rules #
-#########
-rules:
-  no-useless-escape: warn
-  semi: error
+  - 'jest'
